@@ -10,5 +10,16 @@
   <%= @registered_application.url %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "registered_applications/events", locals: { events: @events } %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
 <%= link_to 'Back', registered_applications_path %>

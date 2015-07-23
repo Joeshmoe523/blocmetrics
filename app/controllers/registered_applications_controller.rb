@@ -10,6 +10,8 @@ class RegisteredApplicationsController < ApplicationController
   # GET /registered_applications/1
   # GET /registered_applications/1.json
   def show
+    @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events
   end
 
   # GET /registered_applications/new
