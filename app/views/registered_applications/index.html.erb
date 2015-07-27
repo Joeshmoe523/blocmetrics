@@ -4,10 +4,9 @@
 <button id="awesome">Button we want to track</button>
 
 <script>
-  $("#awesome").click(function(){
-    $.post("http://localhost:3001/events", {event: {name: "Awesome Button Click"}})
-  })
-
+  $("#awesome").click(
+    function(){blocmetrics.report("Awesome Button Click")}
+  )
 </script>
 
 <table>
@@ -26,4 +25,9 @@
 
 <br>
 
-<%= link_to 'New Registered application', new_registered_application_path %>
+<%= link_to 'New Registered application', new_registered_application_path, id: "newapp" %>
+<script>
+  $("#newapp").click(
+      function(){blocmetrics.report("Attempted New App Registration")}
+    )
+</script>
