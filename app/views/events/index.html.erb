@@ -1,0 +1,13 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<h1>Events Tracking</h1>
+
+
+<%= pie_chart @events.joins(:registered_application).group("registered_applications.name").count %>
+
+<h1>Internal Tracking</h1>
+
+<%= column_chart @internal_events.group(:name).count, color: %>
+
+<h1>Conversions</h1>
+
+<%= bar_chart(@conversions, max: 1) %>

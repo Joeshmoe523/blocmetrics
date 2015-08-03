@@ -19,6 +19,8 @@ gem 'devise'
 
 gem 'faker'
 gem 'pry'
+gem 'chartkick'
+gem 'groupdate'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
